@@ -69,7 +69,8 @@ export default function Home() {
 
   return (
     <main className="relative flex flex-col items-center justify-center min-h-screen p-4">
-      {/* Display today's row if available */}
+      <h1 className="text-2xl font-bold mb-4">{today}</h1>
+	    {/* Display today's row if available */}
       {todayRow && (
         <div className="mt-6 space-y-4">
           <div className="text-center">
@@ -88,7 +89,6 @@ export default function Home() {
       )}
 	
 {/* Main content */}
-      <h1 className="text-2xl font-bold mb-4">{today}</h1>
       <h1 className="text-2xl font-bold mb-4">Daily Tweak-o-Meter</h1>
 
       <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4">
