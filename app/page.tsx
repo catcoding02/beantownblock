@@ -130,17 +130,17 @@ export default function Home() {
       <div className="mt-5 py-1 px-1 top-4 right-4 items-center justify-items-center rounded shadow space-y-2 text-black">
         <h1 className={`bg-fuchsia-300 px-4 px-2 rounded-xl inline block text-xl text-black font-bold text-right ${sour_gummy.className}`}>Tweak Stats</h1>
 
-        <h2 className={`py-3 text-lg font-semibold text-right ${bad_script.className}`}>Latest Tweak</h2>
+        <h2 className={`py-3 text-lg font-semibold text-center ${bad_script.className}`}>Latest Tweak</h2>
         <p className={`text-xl text-right ${inc_sans.className}`}>
           {submittedValue !== null ? submittedValue : '—'}
         </p>
 
-        <h2 className={`text-lg font-semibold text-right ${bad_script.className}`}>Overall Tweak</h2>
+        <h2 className={`text-lg font-semibold text-center ${bad_script.className}`}>Overall Tweak</h2>
         <p className={`text-xl text-right ${inc_sans.className}`}>
           {average !== null ? average.toFixed(2) : '—'}
         </p>
 
-        <h2 className={`text-lg font-semibold text-right ${bad_script.className}`}>Total Tweaks</h2>
+        <h2 className={`text-lg font-semibold text-center ${bad_script.className}`}>Total Tweaks</h2>
         <p className={`text-xl text-right ${inc_sans.className}`}>{count}</p>
       </div>
 
