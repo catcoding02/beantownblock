@@ -131,17 +131,17 @@ export default function Home() {
         <h1 className={`bg-fuchsia-300 px-4 px-2 rounded-xl inline block text-xl text-black font-bold text-right ${sour_gummy.className}`}>Tweak Stats</h1>
 
         <h2 className={`py-3 text-lg font-semibold text-center ${bad_script.className}`}>Latest Tweak</h2>
-        <p className={`text-xl text-right ${inc_sans.className}`}>
+        <p className={`text-xl text-center ${inc_sans.className}`}>
           {submittedValue !== null ? submittedValue : '—'}
         </p>
 
         <h2 className={`text-lg font-semibold text-center ${bad_script.className}`}>Overall Tweak</h2>
-        <p className={`text-xl text-right ${inc_sans.className}`}>
+        <p className={`text-xl text-center ${inc_sans.className}`}>
           {average !== null ? average.toFixed(2) : '—'}
         </p>
 
         <h2 className={`text-lg font-semibold text-center ${bad_script.className}`}>Total Tweaks</h2>
-        <p className={`text-xl text-right ${inc_sans.className}`}>{count}</p>
+        <p className={`text-xl text-center ${inc_sans.className}`}>{count}</p>
       </div>
 
       
