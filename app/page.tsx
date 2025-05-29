@@ -4,6 +4,13 @@ import { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { Inter, Lora, Sour_Gummy, Bad_Script, Inclusive_Sans} from 'next/font/google';
 
+const gudetama_list = ["/gudetama.png",
+"/gudetama1.png",
+"/gudetama3.png",
+"/gudetama4.gif",
+"/gudetama5.gif"];
+
+
 const inter = Inter({ subsets: ['latin'] });
 const lora = Lora({ subsets: ['latin'] });
 const sour_gummy = Sour_Gummy({
@@ -28,6 +35,14 @@ export default function Home() {
   const today = new Date().toLocaleDateString('en-CA', {
   timeZone: 'America/New_York',
 });
+  const [selectedGudetama, setSelectedGudetama] = useState("");
+
+useEffect(() => {
+const pick_gudetama = Math.floor(Math.random() * gudetama_list.length);
+const select_gudetama = gudetama_list[pick_gudetama];
+setSelectedGudetama(select_gudetama);
+console.log("Selected Gudetama image:", select_gudetama);
+}, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,7 +101,7 @@ export default function Home() {
   return (
     <main className="bg-yellow-50 relative flex flex-col items-center justify-center min-h-screen p-4">
       <h1 className={`text-2xl text-black font-bold mb-4 ${sour_gummy.className}`}>{today}</h1>
-
+      <img src={selectedGudetama} alt="Gudetama" className="w-40 h-auto"/>
 {/* Display today's row if available */}
       {todayRow && (
         <div className="mt-6 space-y-4">
@@ -128,15 +143,15 @@ export default function Home() {
 
 {/* Right column stats */}
       <div className="mt-5 py-1 px-1 top-4 right-4 items-center justify-items-center rounded shadow space-y-2 text-black">
-        <h1 className={`bg-fuchsia-300 px-4 px-2 rounded-xl inline block text-xl text-black font-bold text-right ${sour_gummy.className}`}>Tweak Stats</h1>
+        <h1 className={`bg-fuchsia-300 px-4 px-2 rounded-xl inline block text-xl text-black font-bold text-center ${sour_gummy.className}`}>Tweak Stats</h1>
 
         <h2 className={`py-3 text-lg font-semibold text-center ${bad_script.className}`}>Latest Tweak</h2>
-        <p className={`text-xl text-center ${inc_sans.className}`}>
+        <p className={`text-xl text-right ${inc_sans.className}`}>
           {submittedValue !== null ? submittedValue : '—'}
         </p>
 
         <h2 className={`text-lg font-semibold text-center ${bad_script.className}`}>Overall Tweak</h2>
-        <p className={`text-xl text-center ${inc_sans.className}`}>
+        <p className={`text-xl text-right ${inc_sans.className}`}>
           {average !== null ? average.toFixed(2) : '—'}
         </p>
 
